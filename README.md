@@ -1,16 +1,51 @@
-# Zapchastyny FrontEnd
+# Zapchastyny FrontEnd (Nuxt 3)
 
-Проект на Vue 3 з TypeScript, Composition API та Vuetify.
+Проект на Nuxt 3 з TypeScript, Composition API та Vuetify.
+
+## ⚠️ Вимоги до системи
+
+**Важливо:** Nuxt 3 потребує Node.js версії **18+ або 20+**
+
+Поточна версія Node.js: v14.17.1 (застаріла)
+
+### Як оновити Node.js:
+
+1. **Через nvm (рекомендовано):**
+   ```bash
+   nvm install 20
+   nvm use 20
+   ```
+
+2. **Або завантажте з офіційного сайту:**
+   https://nodejs.org/
 
 ## Технології
 
-- Vue 3
-- TypeScript
-- Composition API
-- Vuetify 3
-- Vite
+- **Nuxt 3** - фреймворк на базі Vue
+- **TypeScript** - типізація
+- **Composition API** - стиль написання компонентів
+- **Vuetify 3** - UI бібліотека Material Design
+- **Pinia** - управління станом
+
+## Структура проекту
+
+```
+├── app.vue              # Головний компонент
+├── layouts/             # Layout компоненти
+│   └── DefaultLayout.vue
+├── pages/               # Сторінки (автоматична маршрутизація)
+│   ├── index.vue        # Головна сторінка (/)
+│   └── about.vue        # Про проект (/about)
+├── components/          # Переіспользовувані компоненти
+├── composables/         # Composition API функції
+├── plugins/             # Nuxt плагіни
+│   └── vuetify.client.ts
+└── nuxt.config.ts       # Конфігурація Nuxt
+```
 
 ## Встановлення
+
+Після оновлення Node.js до версії 18+:
 
 ```bash
 npm install
@@ -21,6 +56,8 @@ npm install
 ```bash
 npm run dev
 ```
+
+Проект буде доступний за адресою: `http://localhost:3000`
 
 ## Збірка
 
@@ -34,3 +71,55 @@ npm run build
 npm run preview
 ```
 
+## Генерація статичного сайту
+
+```bash
+npm run generate
+```
+
+## Особливості Nuxt 3
+
+✅ **Автоматична маршрутизація** - файли в `pages/` автоматично стають роутами  
+✅ **Auto-imports** - компоненти та composables імпортуються автоматично  
+✅ **SSR/SSG** - підтримка серверного рендерингу та статичної генерації  
+✅ **TypeScript** - повна підтримка з автодоповненням  
+✅ **Vuetify** - налаштовано через плагін
+
+## Адмінська панель
+
+Проект включає повнофункціональну адмінську панель з автентифікацією.
+
+### Тестові облікові дані:
+
+- **Email:** `admin@example.com`
+- **Пароль:** `admin123`
+
+### Структура адмінської панелі:
+
+- `/login` - Сторінка входу
+- `/admin/products` - Управління товарами (головна сторінка адмінки)
+- `/admin/categories` - Управління категоріями
+- `/admin/cars` - Управління автомобілями
+- `/admin/orders` - Управління замовленнями
+
+### Захист маршрутів:
+
+- `middleware/auth.ts` - перевіряє автентифікацію
+- `middleware/admin.ts` - перевіряє права адміністратора
+- `middleware/guest.ts` - перенаправляє авторизованих користувачів
+
+### Компоненти:
+
+- `ProductCard` - картка товару з можливістю редагування та видалення
+- `layouts/admin.vue` - layout з sidebar навігацією
+
+## Наступні кроки
+
+1. Оновіть Node.js до версії 18+ або 20+
+2. Запустіть `npm install`
+3. Запустіть `npm run dev`
+4. Відкрийте `http://localhost:3000/login`
+5. Увійдіть з тестовими даними
+6. Додавайте нові сторінки в `pages/admin/`
+7. Створюйте компоненти в `components/`
+8. Використовуйте composables в `composables/`

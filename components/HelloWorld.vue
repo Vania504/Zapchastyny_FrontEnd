@@ -2,7 +2,7 @@
   <v-card>
     <v-card-title>Ласкаво просимо!</v-card-title>
     <v-card-text>
-      <p>Це Vue 3 проект з TypeScript, Composition API та Vuetify</p>
+      <p>Це Nuxt 3 проект з TypeScript, Composition API та Vuetify</p>
       <v-btn color="primary" @click="increment">
         Лічильник: {{ count }}
       </v-btn>
